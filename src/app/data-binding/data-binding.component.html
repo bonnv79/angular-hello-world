@@ -1,0 +1,20 @@
+<div>
+  Data Binding
+  <h3>Your name: {{ user.name }}</h3>
+  <p>Your name: {{ user.age }}</p>
+</div>
+
+<div>
+  Property binding
+  <input type="text" [value]="user.name" />
+</div>
+
+<div>
+  Event binding
+  <button (click)="showInfo()">Click me!</button>
+</div>
+
+<div>
+  Two-way binding
+  <input type="text" [(ngModel)]="user.name" />
+</div>
