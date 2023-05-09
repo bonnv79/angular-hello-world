@@ -10,6 +10,15 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
+import { StructureDirectiveIfElseComponent } from './structure-directive-if-else/structure-directive-if-else.component';
+import { StructureDirectiveNgForComponent } from './structure-directive-ng-for/structure-directive-ng-for.component';
+import { BindingComponent } from './binding/binding.component';
+import { PassingDataBetweenComponentsComponent } from './passing-data-between-components/passing-data-between-components.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { EventInComponentComponent } from './event-in-component/event-in-component.component';
+import { AuthorDetailComponent } from './author-detail/author-detail.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { ToggleComponent } from './toggle/toggle.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +27,15 @@ import { HomeComponent } from './home/home.component';
     MenuComponent,
     DataBindingComponent,
     HomeComponent,
+    StructureDirectiveIfElseComponent,
+    StructureDirectiveNgForComponent,
+    BindingComponent,
+    PassingDataBetweenComponentsComponent,
+    ProgressBarComponent,
+    EventInComponentComponent,
+    AuthorDetailComponent,
+    TwoWayBindingComponent,
+    ToggleComponent,
   ],
   imports: [
     BrowserModule,

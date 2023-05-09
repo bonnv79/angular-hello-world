@@ -1,5 +1,6 @@
 <div class="card-container">
-  <button class="card card-small" tabindex="0" [routerLink]="item.path" *ngFor="let item of menuItems">
+  <button routerLinkActive="active-link" class="card card-small" tabindex="0" [routerLink]="item.path"
+    *ngFor="let item of menuItems">
     <mat-icon class="menu-icon" viewBox="0 0 24 24" aria-hidden="false" aria-label="Example home icon"
       fontIcon="code"></mat-icon>
     <span>{{item.title}}</span>

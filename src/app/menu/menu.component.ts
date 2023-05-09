@@ -8,6 +8,7 @@ import { routes } from '../app-routing.module';
 })
 export class MenuComponent {
   menuItems = routes;
+
   // menuItems = [
   //   {
   //     id: 'home',

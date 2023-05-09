@@ -1,0 +1,17 @@
+<p>binding works!</p>
+<div>
+  Class binding
+  <div [class.tab-active]="isTabActive">add tab-active class if isTabActive is true</div>
+  <div [class]="classExpr">classExpr</div>
+</div>
+<hr />
+<div>
+  Style binding
+  <div class="style-binding" [style.width]="width">
+    add width
+  </div>
+
+  <div [style]="styleExpr">
+    styleExpr
+  </div>
+</div>

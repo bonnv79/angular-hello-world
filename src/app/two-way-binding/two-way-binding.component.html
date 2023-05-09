@@ -1,0 +1,8 @@
+<p>Your name: {{ name }}</p>
+
+<input type="text" [(ngModel)]="name" />
+<hr />
+<div>
+  value: {{checked}}
+</div>
+<app-toggle [(checked)]="checked"></app-toggle>

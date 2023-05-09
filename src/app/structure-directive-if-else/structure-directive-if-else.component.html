@@ -1,0 +1,24 @@
+<div>
+  structure-directive-if-else
+  <h2>Hello there!</h2>
+  <h3>Your name: {{ user.name }}</h3>
+  <p>Your age: {{ user.age }}</p>
+
+  <div *ngIf="user.age >= 13">Bạn có thể xem nội dung PG-13</div>
+  <div *ngIf="user.age < 13">Bạn không thể xem nội dung PG-13</div>
+</div>
+
+<hr />
+<div>if else</div>
+<div *ngIf="user.age >= 13; else noPG13">Bạn có thể xem nội dung PG-13</div>
+
+<hr />
+<div>if else in ng-template</div>
+<ng-template [ngIf]="user.age >= 13" [ngIfElse]="noPG13">
+  <div>Bạn có thể xem nội dung PG-13</div>
+</ng-template>
+
+<hr />
+<ng-template #noPG13>
+  <div>Bạn không thể xem nội dung PG-13</div>
+</ng-template>

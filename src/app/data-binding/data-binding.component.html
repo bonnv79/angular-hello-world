@@ -3,17 +3,17 @@
   <h3>Your name: {{ user.name }}</h3>
   <p>Your name: {{ user.age }}</p>
 </div>
-
+<hr />
 <div>
   Property binding
   <input type="text" [value]="user.name" />
 </div>
-
+<hr />
 <div>
   Event binding
   <button (click)="showInfo()">Click me!</button>
 </div>
-
+<hr />
 <div>
   Two-way binding
   <input type="text" [(ngModel)]="user.name" />
