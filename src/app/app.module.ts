@@ -19,6 +19,7 @@ import { EventInComponentComponent } from './event-in-component/event-in-compone
 import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { TemplateVariableComponent } from './template-variable/template-variable.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ToggleComponent } from './toggle/toggle.component';
     AuthorDetailComponent,
     TwoWayBindingComponent,
     ToggleComponent,
+    TemplateVariableComponent,
   ],
   imports: [
     BrowserModule,

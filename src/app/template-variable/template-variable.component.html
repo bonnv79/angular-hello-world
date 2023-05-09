@@ -1,0 +1,29 @@
+<div>
+  Parent elements interact with child elements through local variables
+  <div>
+    <button (click)="toggleComp.toggle()">Toggle</button>
+    <br />
+    <app-toggle #toggleComp></app-toggle>
+  </div>
+</div>
+
+<hr />
+<div>
+  <form #nameForm="ngForm">
+    <input type="text" class="form-control" required [(ngModel)]="model.name" name="name" #name="ngModel" />
+    <button>Submit</button>
+  </form>
+</div>
+<hr />
+Parent class with ViewChild
+<div>
+  <button (click)="toggleInside()">Toggle inside class</button>
+  <br />
+  <app-toggle #toggleComp1></app-toggle>
+</div>
+<hr />
+<div>
+  <app-toggle></app-toggle>
+  <br />
+  <app-toggle></app-toggle>
+</div>

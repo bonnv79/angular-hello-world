@@ -8,6 +8,7 @@ import { EventInComponentComponent } from './event-in-component/event-in-compone
 import { PassingDataBetweenComponentsComponent } from './passing-data-between-components/passing-data-between-components.component';
 import { StructureDirectiveIfElseComponent } from './structure-directive-if-else/structure-directive-if-else.component';
 import { StructureDirectiveNgForComponent } from './structure-directive-ng-for/structure-directive-ng-for.component';
+import { TemplateVariableComponent } from './template-variable/template-variable.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 
 export const routes: Routes = [
@@ -55,6 +56,11 @@ export const routes: Routes = [
     path: "two-way-binding",
     component: TwoWayBindingComponent,
     title: "Two way binding"
+  },
+  {
+    path: "template-variable",
+    component: TemplateVariableComponent,
+    title: "Template variable (Todo)"
   },
 ];
 
