@@ -10,6 +10,8 @@ import { StructureDirectiveIfElseComponent } from './structure-directive-if-else
 import { StructureDirectiveNgForComponent } from './structure-directive-ng-for/structure-directive-ng-for.component';
 import { TemplateVariableComponent } from './template-variable/template-variable.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { ContentProjectComponent } from './content-project/content-project.component';
+import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
 
 export const routes: Routes = [
   // {
@@ -61,6 +63,16 @@ export const routes: Routes = [
     path: "template-variable",
     component: TemplateVariableComponent,
     title: "Template variable (Todo)"
+  },
+  {
+    path: "content-project",
+    component: ContentProjectComponent,
+    title: "Content Project"
+  },
+  {
+    path: "ng-template-outlet",
+    component: NgTemplateOutletComponent,
+    title: "Ng Template Outlet"
   },
 ];
 

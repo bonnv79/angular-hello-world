@@ -20,6 +20,9 @@ import { AuthorDetailComponent } from './author-detail/author-detail.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { ToggleComponent } from './toggle/toggle.component';
 import { TemplateVariableComponent } from './template-variable/template-variable.component';
+import { ContentProjectComponent } from './content-project/content-project.component';
+import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
+import { TabContainerComponent } from './tab-container/tab-container.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { TemplateVariableComponent } from './template-variable/template-variable
     TwoWayBindingComponent,
     ToggleComponent,
     TemplateVariableComponent,
+    ContentProjectComponent,
+    NgTemplateOutletComponent,
+    TabContainerComponent,
   ],
   imports: [
     BrowserModule,

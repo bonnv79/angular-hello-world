@@ -1,3 +1,22 @@
+<!-- this is an example in the content-project -->
+<header>
+  <ng-content select=".toggle-header"></ng-content>
+</header>
+<!-- end -->
+
 <div class="toggle-wrapper" [class.checked]="checked" tabindex="0" (click)="toggle()">
   <div class="toggle"></div>
 </div>
+
+<!-- this is an example in the content-project -->
+<div class="toggle-label">
+  <ng-content select="label"></ng-content>
+</div>
+<div class="toggle-label">
+  <ng-content select="app-label"></ng-content>
+</div>
+
+<div class="toggle-content">
+  <ng-content></ng-content>
+</div>
+<!-- end -->
