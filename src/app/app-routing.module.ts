@@ -13,6 +13,8 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { ContentProjectComponent } from './content-project/content-project.component';
 import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
 import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
+import { ContentChildComponent } from './content-child/content-child.component';
+import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 
 export const routes: Routes = [
   // {
@@ -79,6 +81,16 @@ export const routes: Routes = [
     path: "dependency-injection",
     component: DependencyInjectionComponent,
     title: "Dependency Injection"
+  },
+  {
+    path: "content-child",
+    component: ContentChildComponent,
+    title: "Content Child (Todo)"
+  },
+  {
+    path: "pipe-example",
+    component: PipeExampleComponent,
+    title: "Pipe example"
   },
 ];
 

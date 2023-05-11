@@ -1,0 +1,53 @@
+<div>{{ now | date }}</div>
+
+<div>{{ now | date:'medium' | uppercase}}</div>
+
+<div>{{ 'uppercase' | uppercase}}</div>
+
+<div>{{ 'LOWERCASE' | lowercase}}</div>
+
+<div>{{ number | currency }}</div>
+
+<div>{{ objectJson | json }}</div>
+
+<hr />
+
+<input type="text" [(ngModel)]="resourceId" />
+
+<h2 class="inbox-title">{{ resourceId| appTitle }} User</h2>
+
+<h2 class="inbox-title">{{ resourceId | appTitle:"Set":"Change" }} User</h2>
+
+<hr />
+
+<p>
+  Set userId to empty string after {{ time$ | async }} seconds, notice the text
+  "Edit" will be set to "Add"
+</p>
+<pre ngNonBindable>{{ userIdChangeAfterFiveSeconds | appTitle}}</pre>
+<div>Form title: {{ userIdChangeAfterFiveSeconds | appTitle}} User</div>
+
+<hr />
+
+<div class="row">
+  <div class="col-xs-6">
+    Name: <input type="text" [(ngModel)]="newUser.name" />
+  </div>
+  <div class="col-xs-6">
+    Age: <input type="text" [(ngModel)]="newUser.age" />
+  </div>
+  <div class="col-xs-6">
+    <button (click)="addUser()">Add user</button>
+  </div>
+
+  <div class="col-xs-6">
+    <h4>Full user list</h4>
+    <div *ngFor="let user of users">{{ user.name }} - {{ user.age }}</div>
+  </div>
+  <div class="col-xs-6">
+    <div class="ml-4">
+      <h4>Adult user list (age > 18)</h4>
+      <div *ngFor="let user of users | isAdult">{{ user.name }} - {{ user.age }}</div>
+    </div>
+  </div>
+</div>

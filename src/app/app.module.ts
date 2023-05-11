@@ -27,6 +27,13 @@ import { DependencyInjectionComponent } from './dependency-injection/dependency-
 import { TabGroupComponent } from './tab-group/tab-group.component';
 import { TabPanelComponent } from './tab-panel/tab-panel.component';
 import { BsTabGroupComponent } from './bs-tab-group/bs-tab-group.component';
+import { ContentChildComponent } from './content-child/content-child.component';
+import { ChTabPanelComponent } from './ch-tab-panel/ch-tab-panel.component';
+import { ChTabGroupComponent } from './ch-tab-group/ch-tab-group.component';
+import { CounterComponent } from './counter/counter.component';
+import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { TitlePipeComponent } from './title-pipe/title-pipe.component';
+import { IsAdultComponent } from './is-adult/is-adult.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +59,13 @@ import { BsTabGroupComponent } from './bs-tab-group/bs-tab-group.component';
     TabGroupComponent,
     TabPanelComponent,
     BsTabGroupComponent,
+    ContentChildComponent,
+    ChTabPanelComponent,
+    ChTabGroupComponent,
+    CounterComponent,
+    PipeExampleComponent,
+    TitlePipeComponent,
+    IsAdultComponent,
   ],
   imports: [
     BrowserModule,
