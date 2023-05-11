@@ -23,6 +23,10 @@ import { TemplateVariableComponent } from './template-variable/template-variable
 import { ContentProjectComponent } from './content-project/content-project.component';
 import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
 import { TabContainerComponent } from './tab-container/tab-container.component';
+import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
+import { TabGroupComponent } from './tab-group/tab-group.component';
+import { TabPanelComponent } from './tab-panel/tab-panel.component';
+import { BsTabGroupComponent } from './bs-tab-group/bs-tab-group.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { TabContainerComponent } from './tab-container/tab-container.component';
     ContentProjectComponent,
     NgTemplateOutletComponent,
     TabContainerComponent,
+    DependencyInjectionComponent,
+    TabGroupComponent,
+    TabPanelComponent,
+    BsTabGroupComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { TemplateVariableComponent } from './template-variable/template-variable
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { ContentProjectComponent } from './content-project/content-project.component';
 import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outlet.component';
+import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
 
 export const routes: Routes = [
   // {
@@ -73,6 +74,11 @@ export const routes: Routes = [
     path: "ng-template-outlet",
     component: NgTemplateOutletComponent,
     title: "Ng Template Outlet"
+  },
+  {
+    path: "dependency-injection",
+    component: DependencyInjectionComponent,
+    title: "Dependency Injection"
   },
 ];
 

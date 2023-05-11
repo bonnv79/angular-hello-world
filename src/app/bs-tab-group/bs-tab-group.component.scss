@@ -1,0 +1,14 @@
+.nav-item {
+  background-color: rgb(219, 219, 219);
+  margin-bottom: 6px;
+  padding: 3px 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(160, 160, 160);
+  }
+
+  .active {
+    color: red;
+  }
+}
