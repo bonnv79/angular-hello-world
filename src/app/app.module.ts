@@ -34,6 +34,7 @@ import { CounterComponent } from './counter/counter.component';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { TitlePipeComponent } from './title-pipe/title-pipe.component';
 import { IsAdultComponent } from './is-adult/is-adult.component';
+import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { IsAdultComponent } from './is-adult/is-adult.component';
     PipeExampleComponent,
     TitlePipeComponent,
     IsAdultComponent,
+    RxjsExampleComponent,
   ],
   imports: [
     BrowserModule,

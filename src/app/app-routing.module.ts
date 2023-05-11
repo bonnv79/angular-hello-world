@@ -15,6 +15,7 @@ import { NgTemplateOutletComponent } from './ng-template-outlet/ng-template-outl
 import { DependencyInjectionComponent } from './dependency-injection/dependency-injection.component';
 import { ContentChildComponent } from './content-child/content-child.component';
 import { PipeExampleComponent } from './pipe-example/pipe-example.component';
+import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
 
 export const routes: Routes = [
   // {
@@ -91,6 +92,11 @@ export const routes: Routes = [
     path: "pipe-example",
     component: PipeExampleComponent,
     title: "Pipe example"
+  },
+  {
+    path: "rxjs-example",
+    component: RxjsExampleComponent,
+    title: "RxJS example"
   },
 ];
 

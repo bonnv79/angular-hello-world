@@ -1,0 +1,14 @@
+<p>rxjs-example works!</p>
+<button class="button" (click)="startDemo()">Demo</button>
+<button class="button" (click)="startInterval()">Interval</button>
+<button class="button" (click)="startChildSub()">Child Sub</button>
+<button class="button" (click)="ofSub()">ofSub</button>
+<button class="button" (click)="fromSub()">ofFrom</button>
+
+<button class="button" (click)="fromEventSub()">fromEventSub</button>
+<div class="hidden" [class.show]="isFromEventSub">
+  <button id="btn">fromEventSub</button>
+  <input type="text" id="input" />
+</div>
+
+<div *ngFor="let item of res">{{item | json}}</div>
