@@ -1,0 +1,181 @@
+3.1
+<input type="text" (change)="updateValue($event)">
+
+3.2
+<input type="text" #label1 (change)="updateValue(label1.value)">
+
+3.3
+<input type="text" [(ngModel)]="title" name="title">
+
+4.0 ngModel và form fields
+in form: ng-untouched, ng-touched, ng-pristine, ng-dirty, ng-valid, ng-invalid
+
+5.0 ngModule
+- imports: import module
+- declarations: import component
+- bootstrap: root component
+
+6. Services: @injectable get from @angular/core
+
+6.1 Dependency Injection (DI)
+constructor(private time: TimeService)
+
+6.2 common service
+@NgModule({
+  providers: [TimeService],
+})
+export class AppModule { }
+
+7. Directives
+- Components: <component-name></component-name>
+- Structural directives: ngFor, ngIf
+- Attribute directives: ngStyle
+
+7.1 Ng-if… else
+<div *ngIf="title; else noTitle">Time: {{title}}</div>
+<ng-template #noTitle> Click on the button to see time. </ng-template>
+
+7.2 Ng-Template
+<div *ngIf="isTrue; then tmplWhenTrue else tmplWhenFalse"></div>
+<ng-template #tmplWhenTrue >I show-up when isTrue is true. </ng-template>
+<ng-template #tmplWhenFalse > I show-up when isTrue is false </ng-template>
+
+7.3 Ng-Container
+this directive don't render a <ng-container> tag
+
+7.4 NgSwitch and NgSwitchCase
+<div [ngSwitch]="isMetric">
+  <div *ngSwitchCase="true">Degree Celsius</div>
+  <div *ngSwitchDefault>Fahrenheit</div>
+</div>
+
+7.5 Input function
+@Input() showRegister: boolean;
+when you can call it in component
+<login [showRegister]="isRegisterVisible"></login>
+- Other way: 
+@Input("should-show-register") showRegister: boolean;
+<login should-show-register="true"></login>
+
+7.6 Output function
+- child component
+@Output() onLogin: EventEmitter<{userId: string, password: string}>;
+constructor() {
+    this.onLogin = new EventEmitter(); //Khởi tạo một EventEmitter mới và gắn cho biến onLogin.
+}
+loginClicked(userId, password){
+    this.onLogin.next({userId, password});
+}
++ in html 
+<button (click)="loginClicked(userId.value, password.value)">Go</button>
+- parent component
+loginHandlerAtParrent(event){
+    console.log(event); // Output: Object {userId: "sampleUser", password: "samplePassword"}
+}
++ in html
+<login (onLogin)="loginHandlerAtParrent($event)"></login>
+
+8. trigger change in angular
+- Shallow Comparison
+- Deep Comparison
+
+9. Transclusion (trans between the directives)
+<blue>sample text</blue>
+in html of bule component
+<div class="blue">
+  <ng-content></ng-content> // ng-content will show 'sample text'
+</div>
+
+10. use observables right in html
+<div *ngIf="asyncData | async; else loading; let title">
+  Title: {{title}}
+</div>
+<ng-template #loading> Loading... </ng-template>
+- example 2
+<!-- colors = ["red", "blue", "green", "yellow", "violet"]; -->
+<ul *ngFor="let color of colors | async">
+  <li>{{color}}</li>
+</ul>
+
+11. don't input null value
+var firstName: string | null, lastName: string | undefined ;
+firstName = null;
+lastName = undefined;
+- we can turn off strictNullCheck function in the tsconfig.json file.
+default strictNullCheck value is true
+
+12. call html api and receive Observables flow work
+import http from @angular/http
+this.http
+  .get("https://dinosaur-facts.firebaseio.com/dinosaurs.json")
+  .map((response) => response.json())
+  .subscribe((data) => console.log(data), // success
+    (error) => console.error(error), // failure
+    () => console.info("done")); // done
+
+13. but i love type kind of Promises, i hate Observables
+import 'rxjs/add/operator/toPromise';
+getData(): Promise<any>{
+  return this.http
+  .get("https://dinosaur-facts.firebaseio.com/dinosaurs.json")
+  .map((response) => response.json())
+  .toPromise();
+}
+this.getData()
+  .then((data) =>  this.dino = data)
+  .catch((error) => console.error(error));
+
+14. router
+- init project
+ng new sample-application --routing
+- exist project
+ng g module my-router-module --routing
+
+14.1 router outlet
+position to render component in router
+<router-outlet></router-outlet>
+
+14.2 setup route for angular application
+- path
+- component
+- redirectTo
+- pathMatch (prefix <default>, full)
+
+14.3 child routes
+const routes: Routes = [
+  {
+    path: 'home',
+    component: Sample1Component,
+    children: [
+      {
+        path: 'second', 
+        component: Sample2Component
+      }
+    ]
+  }]
+render in html 
+<div>
+  sample-1 works! <!-- this is html of Sample1Component --> 
+  <router-outlet></router-outlet> <!-- Sample2Component will be render this local of parent component --> 
+</div>
+
+14.4 params
+- define
+{        
+    path: details/:id,
+    component: DetailsComponent
+}
+- read params
+import { ActivedRoute } from @angular/router;
+constructor(private activeRoute: ActivatedRoute) { }
+this.activeRoute
+      .params
+      .subscribe((data) => console.log(data[id]));
+
+
+* the end:
+contact link: 
+- https://viblo.asia/p/angular-4-tu-a-den-z-Qbq5QLpwlD8
+- https://www.dotnetcurry.com/angular/1385/angular-4-cheat-sheet
+
+
