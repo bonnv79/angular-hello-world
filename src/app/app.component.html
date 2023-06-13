@@ -34,8 +34,10 @@
 <div class="content" role="main">
 
   <!-- Next Steps -->
-  <h2>Next Steps v.1.2</h2>
-  <p>What do you want to do next with your app?</p>
+  <div class="header">
+    <h2>{{ title }}</h2>
+    <p>What do you want to do next with your app?</p>
+  </div>
 
   <input type="hidden" #selection>
 
@@ -44,7 +46,7 @@
   <router-outlet></router-outlet>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     Love Angular?&nbsp;
     <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
       <div class="github-star-badge">

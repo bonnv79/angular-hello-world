@@ -35,6 +35,7 @@ import { PipeExampleComponent } from './pipe-example/pipe-example.component';
 import { TitlePipeComponent } from './title-pipe/title-pipe.component';
 import { IsAdultComponent } from './is-adult/is-adult.component';
 import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
+import { ControlLabelComponent } from './control-label/control-label.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { RxjsExampleComponent } from './rxjs-example/rxjs-example.component';
     TitlePipeComponent,
     IsAdultComponent,
     RxjsExampleComponent,
+    ControlLabelComponent,
   ],
   imports: [
     BrowserModule,

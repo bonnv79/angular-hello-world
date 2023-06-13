@@ -1,41 +1,42 @@
-<p>structure-directive-ng-for works!</p>
-<div *ngFor="let author of authors">
-  {{author.id}} - {{author.firstName}} {{author.lastName}}
-</div>
-<hr />
-<div
-  *ngFor="let author of authors; $implicit as i; index as idx; count as total; first as f; last as l; even as e; odd as o">
-  ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
-  {{author.lastName}}
-  <div>
-    $implicit - {{jsonStringify(i)}}
+<app-control-label label="structure-directive-ng-for works!">
+  <div *ngFor="let author of authors">
+    {{author.id}} - {{author.firstName}} {{author.lastName}}
   </div>
-  <div>
-    first - {{f}}
+</app-control-label>
+
+<app-control-label label="for with params">
+  <div
+    *ngFor="let author of authors; $implicit as i; index as idx; count as total; first as f; last as l; even as e; odd as o">
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+    <div>
+      $implicit - {{jsonStringify(i)}}
+    </div>
+    <div>
+      first - {{f}}
+    </div>
+    <div>
+      last - {{l}}
+    </div>
+    <div>
+      even - {{e}}
+    </div>
+    <div>
+      odd - {{o}}
+    </div>
   </div>
-  <div>
-    last - {{l}}
-  </div>
-  <div>
-    even - {{e}}
-  </div>
-  <div>
-    odd - {{o}}
-  </div>
-</div>
-<hr />
-<div>
-  NgForOf and Ng-template
+</app-control-label>
+
+<app-control-label label="NgForOf and Ng-template">
   <ng-template ngFor [ngForOf]="authors" let-author let-idx="index" let-total="count">
     <div>
       ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
       {{author.lastName}}
     </div>
   </ng-template>
-</div>
-<hr />
-<div>
-  using multi structural-directives in an element
+</app-control-label>
+
+<app-control-label label="using multi structural-directives in an element">
   <div *ngFor="let item of list">
     <ng-container *ngIf="item.show">{{item.title}}</ng-container>
   </div>
@@ -43,4 +44,4 @@
   <div *ngFor="let item of list">
     <ng-template [ngIf]="item.show">{{item.title}}</ng-template>
   </div>
-</div>
+</app-control-label>

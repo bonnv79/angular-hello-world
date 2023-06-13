@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Run this project on Codespaces 
+### Step 1: run command to install angular cil
+`npm install -g @angular/cli`
+### Step 2: run command to start server
+`npm run ng serve -- --host=0.0.0.0 --disable-host-check`

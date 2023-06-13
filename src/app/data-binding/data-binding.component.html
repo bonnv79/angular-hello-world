@@ -1,20 +1,17 @@
-<div>
-  Data Binding
-  <h3>Your name: {{ user.name }}</h3>
-  <p>Your name: {{ user.age }}</p>
-</div>
-<hr />
-<div>
-  Property binding
+<app-control-label label="Data Binding">
+  <div>Your name: {{ user.name }}</div>
+  <div>Your name: {{ user.age }}</div>
+</app-control-label>
+
+<app-control-label label="Property binding">
   <input type="text" [value]="user.name" />
-</div>
-<hr />
-<div>
-  Event binding
+</app-control-label>
+
+<app-control-label label="Event binding">
   <button (click)="showInfo()">Click me!</button>
-</div>
-<hr />
-<div>
-  Two-way binding
+</app-control-label>
+
+<app-control-label label="Two-way binding">
+  <div>Your name: {{ user.name }}</div>
   <input type="text" [(ngModel)]="user.name" />
-</div>
+</app-control-label>
