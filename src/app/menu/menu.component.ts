@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { routes } from '../app-routing.module';
 
 @Component({
@@ -7,6 +7,7 @@ import { routes } from '../app-routing.module';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+  @Input() version?: string = '';
   menuItems = routes;
 
   // menuItems = [
@@ -23,4 +24,7 @@ export class MenuComponent {
   //     icon: '',
   //   },
   // ]
+  getTitle(title: any) {
+    return `${title}`;
+  }
 }

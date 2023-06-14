@@ -1,8 +1,43 @@
-<div class="card-container">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Angular</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLinkActive="active" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Examples
+          </a>
+          <ul class="dropdown-menu">
+            <li *ngFor="let item of menuItems">
+              <a class="dropdown-item" routerLinkActive="active" [routerLink]="item.path">
+                {{getTitle(item.title) | titlecase}}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <div class="text-body-tertiary">
+          v{{version}}
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- <div class="card-container">
   <button routerLinkActive="active-link" class="card card-small" tabindex="0" [routerLink]="item.path"
     *ngFor="let item of menuItems">
     <mat-icon class="menu-icon" viewBox="0 0 24 24" aria-hidden="false" aria-label="Example home icon"
       fontIcon="code"></mat-icon>
     <span>{{item.title}}</span>
   </button>
-</div>
+</div> -->
