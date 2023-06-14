@@ -1,23 +1,19 @@
-<p>passing-data-between-components works!</p>
-
-<div>
-  using ngOnChanges
+<app-control-label label="Use ngOnChanges function">
   <app-progress-bar [progress]="progress" [progress1]="progress1" [backgroundColor]="'#9e9e9e'"
     [progressColor]="'#22b964'">
   </app-progress-bar>
-  <input type="text" [(ngModel)]="progress" />
+  <input class="form-control form-control-sm mt-2 wm-2" type="text" [(ngModel)]="progress" />
   <div>
     Progress value: {{progress}}
   </div>
-</div>
-<hr />
-<div>
-  using getter/setter
+</app-control-label>
+
+<app-control-label label="Use getter/setter">
   <app-progress-bar [progress]="progress1" [progress1]="progress1" [backgroundColor]="'#9e9e9e'"
     [progressColor]="'#22b964'">
   </app-progress-bar>
-  <input type="text" [(ngModel)]="progress1" />
+  <input class="form-control form-control-sm mt-2 wm-2" type="text" [(ngModel)]="progress1" />
   <div>
     Progress value: {{progress1}}
   </div>
-</div>
+</app-control-label>

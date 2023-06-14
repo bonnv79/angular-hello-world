@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./control-label.component.scss']
 })
 export class ControlLabelComponent {
-  @Input() label: string = '';
+  @Input() label?: string = '';
 }

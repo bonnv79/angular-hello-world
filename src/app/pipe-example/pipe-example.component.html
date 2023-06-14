@@ -1,53 +1,47 @@
-<div>{{ now | date }}</div>
+<app-control-label label="date">{{ now | date }}</app-control-label>
+<app-control-label label="date with medium param">{{ now | date:'medium' | uppercase}}</app-control-label>
+<app-control-label label="uppercase">{{ 'uppercase' | uppercase}}</app-control-label>
+<app-control-label label="lowercase">{{ 'LOWERCASE' | lowercase}}</app-control-label>
+<app-control-label label="currency">{{ number | currency }}</app-control-label>
+<app-control-label label="json">{{ objectJson | json }}</app-control-label>
 
-<div>{{ now | date:'medium' | uppercase}}</div>
+<app-control-label label="appTitle">
+  <input type="text" [(ngModel)]="resourceId" />
 
-<div>{{ 'uppercase' | uppercase}}</div>
+  <div class="inbox-title">{{ resourceId| appTitle }} User</div>
+  <div class="inbox-title">{{ resourceId | appTitle:"Set":"Change" }} User</div>
+</app-control-label>
 
-<div>{{ 'LOWERCASE' | lowercase}}</div>
+<app-control-label label="async">
+  <p>
+    Set userId to empty string after {{ time$ | async }} seconds, notice the text
+    "Edit" will be set to "Add"
+  </p>
+  <pre ngNonBindable>{{ userIdChangeAfterFiveSeconds | appTitle}}</pre>
+  <div>Form title: {{ userIdChangeAfterFiveSeconds | appTitle}} User</div>
+</app-control-label>
 
-<div>{{ number | currency }}</div>
+<app-control-label label="">
+  <div class="row">
+    <div class="col-xs-6">
+      Name: <input class="form-control form-control-sm" type="text" [(ngModel)]="newUser.name" />
+    </div>
+    <div class="col-xs-6">
+      Age: <input class="form-control form-control-sm" type="text" [(ngModel)]="newUser.age" />
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-secondary btn-sm my-2" (click)="addUser()">Add user</button>
+    </div>
 
-<div>{{ objectJson | json }}</div>
-
-<hr />
-
-<input type="text" [(ngModel)]="resourceId" />
-
-<h2 class="inbox-title">{{ resourceId| appTitle }} User</h2>
-
-<h2 class="inbox-title">{{ resourceId | appTitle:"Set":"Change" }} User</h2>
-
-<hr />
-
-<p>
-  Set userId to empty string after {{ time$ | async }} seconds, notice the text
-  "Edit" will be set to "Add"
-</p>
-<pre ngNonBindable>{{ userIdChangeAfterFiveSeconds | appTitle}}</pre>
-<div>Form title: {{ userIdChangeAfterFiveSeconds | appTitle}} User</div>
-
-<hr />
-
-<div class="row">
-  <div class="col-xs-6">
-    Name: <input type="text" [(ngModel)]="newUser.name" />
-  </div>
-  <div class="col-xs-6">
-    Age: <input type="text" [(ngModel)]="newUser.age" />
-  </div>
-  <div class="col-xs-6">
-    <button (click)="addUser()">Add user</button>
-  </div>
-
-  <div class="col-xs-6">
-    <h4>Full user list</h4>
-    <div *ngFor="let user of users">{{ user.name }} - {{ user.age }}</div>
-  </div>
-  <div class="col-xs-6">
-    <div class="ml-4">
-      <h4>Adult user list (age > 18)</h4>
-      <div *ngFor="let user of users | isAdult">{{ user.name }} - {{ user.age }}</div>
+    <div class="col-xs-6">
+      <b>Full user list</b>
+      <div *ngFor="let user of users">{{ user.name }} - {{ user.age }}</div>
+    </div>
+    <div class="col-xs-6">
+      <div class="ml-4">
+        <b>Adult user list (age > 18)</b>
+        <div *ngFor="let user of users | isAdult">{{ user.name }} - {{ user.age }}</div>
+      </div>
     </div>
   </div>
-</div>
+</app-control-label>

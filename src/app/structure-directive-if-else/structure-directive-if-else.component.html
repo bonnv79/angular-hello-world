@@ -1,4 +1,4 @@
-<app-control-label label="structure-directive-if-else">
+<app-control-label label="Structure directive ngIf">
   <div>Hello there!</div>
   <div>Your name: {{ user.name }}</div>
   <div>Your age: {{ user.age }}</div>
@@ -7,11 +7,11 @@
   <div *ngIf="user.age < 13">Bạn không thể xem nội dung PG-13</div>
 </app-control-label>
 
-<app-control-label label="if else">
+<app-control-label label="ngIf with ng-template">
   <div *ngIf="user.age >= 13; else noPG13">Bạn có thể xem nội dung PG-13</div>
 </app-control-label>
 
-<app-control-label label="if else in ng-template">
+<app-control-label label="ngIfElse with ng-template">
   <ng-template [ngIf]="user.age >= 13" [ngIfElse]="noPG13">
     <div>Bạn có thể xem nội dung PG-13</div>
   </ng-template>

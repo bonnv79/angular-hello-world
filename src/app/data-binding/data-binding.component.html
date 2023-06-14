@@ -4,14 +4,14 @@
 </app-control-label>
 
 <app-control-label label="Property binding">
-  <input type="text" [value]="user.name" />
+  <input class="form-control form-control-sm wm-2" type="text" [value]="user.name" />
 </app-control-label>
 
 <app-control-label label="Event binding">
-  <button (click)="showInfo()">Click me!</button>
+  <button class="btn btn-secondary btn-sm" (click)="showInfo()">Click me!</button>
 </app-control-label>
 
 <app-control-label label="Two-way binding">
   <div>Your name: {{ user.name }}</div>
-  <input type="text" [(ngModel)]="user.name" />
+  <input class="form-control form-control-sm wm-2" type="text" [(ngModel)]="user.name" />
 </app-control-label>

@@ -1,8 +1,9 @@
-<p>Your name: {{ name }}</p>
+<app-control-label label="ngModel with the input">
+  <input type="text" [(ngModel)]="name" />
+  <div class="mt-2">Value: {{name}}</div>
+</app-control-label>
 
-<input type="text" [(ngModel)]="name" />
-<hr />
-<div>
-  value: {{checked}}
-</div>
-<app-toggle [(checked)]="checked"></app-toggle>
+<app-control-label label="ngModel with the radio button">
+  <app-toggle [(checked)]="checked"></app-toggle>
+  <span class="mt-2">Value: {{checked}}</span>
+</app-control-label>

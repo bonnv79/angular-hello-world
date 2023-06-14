@@ -1,4 +1,4 @@
-<div *ngIf="author">
-  <strong>{{ author.firstName }} {{ author.lastName }}</strong>
-  <button (click)="handleDelete()">x</button>
+<div class="mb-2" *ngIf="author">
+  <span class="me-2">{{ author.firstName }} {{ author.lastName }}</span>
+  <button class="btn btn-secondary btn-sm" (click)="handleDelete()">x</button>
 </div>

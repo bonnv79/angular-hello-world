@@ -1,14 +1,13 @@
-<p>rxjs-example works!</p>
-<button class="button" (click)="startDemo()">Demo</button>
-<button class="button" (click)="startInterval()">Interval</button>
-<button class="button" (click)="startChildSub()">Child Sub</button>
-<button class="button" (click)="ofSub()">ofSub</button>
-<button class="button" (click)="fromSub()">ofFrom</button>
+<button class="btn btn-secondary btn-sm me-2" (click)="startDemo()">Demo</button>
+<button class="btn btn-secondary btn-sm me-2" (click)="startInterval()">Interval</button>
+<button class="btn btn-secondary btn-sm me-2" (click)="startChildSub()">Child Sub</button>
+<button class="btn btn-secondary btn-sm me-2" (click)="ofSub()">ofSub</button>
+<button class="btn btn-secondary btn-sm me-2" (click)="fromSub()">ofFrom</button>
 
-<button class="button" (click)="fromEventSub()">fromEventSub</button>
-<div class="hidden" [class.show]="isFromEventSub">
-  <button id="btn">fromEventSub</button>
-  <input type="text" id="input" />
+<button class="btn btn-secondary btn-sm me-2" (click)="fromEventSub()">fromEventSub</button>
+<div class="hidden d-flex align-items-center" [class.show]="isFromEventSub">
+  <button class="btn btn-secondary btn-sm me-2 mt-2 mb-2" id="btn">fromEventSub</button>
+  <input class="form-control form-control-sm" style="max-width: 160px;" type="text" id="input" />
 </div>
 
 <div *ngFor="let item of res">{{item | json}}</div>

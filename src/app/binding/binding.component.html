@@ -1,17 +1,14 @@
-<p>binding works!</p>
-<div>
-  Class binding
-  <div [class.tab-active]="isTabActive">add tab-active class if isTabActive is true</div>
+<app-control-label label="Class binding">
+  <div [class.tab-active]="isTabActive">Add tab-active class if isTabActive is true</div>
   <div [class]="classExpr">classExpr</div>
-</div>
-<hr />
-<div>
-  Style binding
+</app-control-label>
+
+<app-control-label label="Style binding">
   <div class="style-binding" [style.width]="width">
-    add width
+    Add width for style's width
   </div>
 
   <div [style]="styleExpr">
-    styleExpr
+    Add styleExpr for the style
   </div>
-</div>
+</app-control-label>

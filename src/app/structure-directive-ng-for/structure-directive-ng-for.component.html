@@ -1,10 +1,10 @@
-<app-control-label label="structure-directive-ng-for works!">
+<app-control-label label="Structure directive ngFor">
   <div *ngFor="let author of authors">
     {{author.id}} - {{author.firstName}} {{author.lastName}}
   </div>
 </app-control-label>
 
-<app-control-label label="for with params">
+<app-control-label label="ngFor with params">
   <div
     *ngFor="let author of authors; $implicit as i; index as idx; count as total; first as f; last as l; even as e; odd as o">
     ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
@@ -27,7 +27,7 @@
   </div>
 </app-control-label>
 
-<app-control-label label="NgForOf and Ng-template">
+<app-control-label label="NgForOf with ng-template">
   <ng-template ngFor [ngForOf]="authors" let-author let-idx="index" let-total="count">
     <div>
       ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
@@ -36,7 +36,7 @@
   </ng-template>
 </app-control-label>
 
-<app-control-label label="using multi structural-directives in an element">
+<app-control-label label="Use multi structural directives in an element">
   <div *ngFor="let item of list">
     <ng-container *ngIf="item.show">{{item.title}}</ng-container>
   </div>

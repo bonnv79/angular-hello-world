@@ -1,22 +1,24 @@
-<app-toggle [(checked)]="questions.question1">
-  <h3 class="toggle-header">Header 1</h3>
-  <label>Question 1</label>
-  <span>Some paragraph</span>
-</app-toggle>
+<app-control-label label="ng-content with select">
+  <app-toggle [(checked)]="questions.question1">
+    <h5 class="toggle-header">Header 1</h5>
+    <label>Question 1</label>
+    <span>Some paragraph</span>
+  </app-toggle>
+</app-control-label>
 
-<hr />
+<app-control-label label="ng-content with 2 same select">
+  <app-toggle [(checked)]="questions.question2">
+    <h5 class="toggle-header">Header 2</h5>
+    <h5 class="toggle-header">Header 21</h5>
+    <span>Some paragraph 2</span>
+    <label>Question 2</label>
+  </app-toggle>
+</app-control-label>
 
-<app-toggle [(checked)]="questions.question2">
-  <h3 class="toggle-header">Header 2</h3>
-  <h3 class="toggle-header">Header 21</h3>
-  <span>Some paragraph 2</span>
-  <label>Question 2</label>
-</app-toggle>
-
-<hr />
-
-<app-toggle [(checked)]="questions.question1">
-  <h3 class="toggle-header">Header 3</h3>
-  <label ngProjectAs="app-label">Question 3</label>
-  <span>Some paragraph 3</span>
-</app-toggle>
+<app-control-label label="ngProjectAs">
+  <app-toggle [(checked)]="questions.question1">
+    <h5 class="toggle-header">Header 3</h5>
+    <label ngProjectAs="app-label">Question 3</label>
+    <span>Some paragraph 3</span>
+  </app-toggle>
+</app-control-label>

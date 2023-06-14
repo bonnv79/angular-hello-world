@@ -1,5 +1,5 @@
 <div class="tab-header">
-  <button class="tab-item-header" [class.active]="idx === tabActiveIndex" role="presentation"
+  <button class="btn btn-secondary btn-sm me-2" [class.active]="idx === tabActiveIndex" role="presentation"
     *ngFor="let tab of tabPanelList; index as idx" (click)="selectItem(idx)">
     {{tab.title}}
   </button>

@@ -1,63 +1,65 @@
-<div class="card">
-  <div class="card-header">
-    You have selected
-    <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container>.
+<app-control-label label="ngTemplateOutlet">
+  <div class="card">
+    <div class="card-header">
+      You have selected
+      <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container>.
+    </div>
+    <div class="card-body">
+      There are <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container> was
+      selected.
+    </div>
+    <div class="card-footer">
+      You have selected
+      <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container>.
+    </div>
   </div>
-  <div class="card-body">
-    There are <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container> was
-    selected.
-  </div>
-  <div class="card-footer">
-    You have selected
-    <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container>.
-  </div>
-</div>
 
-<ng-template #counterTmpl>
-  <span class="badge badge-primary">{{ counter }}</span> items
-</ng-template>
+  <ng-template #counterTmpl>
+    <span class="badge badge-primary">{{ counter }}</span> items
+  </ng-template>
+</app-control-label>
 
-<hr />
+<app-control-label label="headerTemplate">
+  <ng-template #customTabButtons>
+    <div class="custom-class">
+      <button class="btn btn-primary btn-sm me-2" (click)="login()">
+        {{loginText}}
+      </button>
+      <button class="btn btn-primary btn-sm" (click)="signUp()">
+        {{signUpText}}
+      </button>
+    </div>
+  </ng-template>
+  <app-tab-container></app-tab-container>
+  <app-tab-container [headerTemplate]="customTabButtons"></app-tab-container>
+</app-control-label>
 
-<ng-template #customTabButtons>
-  <div class="custom-class">
-    <button class="tab-button" (click)="login()">
-      {{loginText}}
+<app-control-label label="---">
+  <ng-template #buttonTmpl let-label="label" let-className="className" let-icon="icon">
+    <button [ngClass]="['btn btn-sm me-2', className ? className : '']">
+      <i *ngIf="icon" class="fa {{icon}}"></i>
+      {{ label }}
     </button>
-    <button class="tab-button" (click)="signUp()">
-      {{signUpText}}
+  </ng-template>
+
+  <ng-container [ngTemplateOutlet]="buttonTmpl"
+    [ngTemplateOutletContext]="{ label: 'Click here', className: 'btn-primary', icon: null }">
+  </ng-container>
+
+  <ng-container [ngTemplateOutlet]="buttonTmpl"
+    [ngTemplateOutletContext]="{ label: 'Remove', className: 'btn-danger', icon: 'fa-remove' }">
+  </ng-container>
+</app-control-label>
+
+<app-control-label label="---">
+  <ng-template #buttonTmpl1 let-label let-className="className" let-icon="icon">
+    <button [ngClass]="['btn btn-sm', className ? className : '']">
+      <i *ngIf="icon" class="fa {{icon}}"></i>
+      {{ label }}
     </button>
-  </div>
-</ng-template>
-<app-tab-container></app-tab-container>
-<app-tab-container [headerTemplate]="customTabButtons"></app-tab-container>
+  </ng-template>
 
-<hr />
-
-<ng-template #buttonTmpl let-label="label" let-className="className" let-icon="icon">
-  <button [ngClass]="['btn', className ? className : '']">
-    <i *ngIf="icon" class="fa {{icon}}"></i>
-    {{ label }}
-  </button>
-</ng-template>
-
-<ng-container [ngTemplateOutlet]="buttonTmpl"
-  [ngTemplateOutletContext]="{ label: 'Click here', className: 'btn-primary', icon: null }">
-</ng-container>
-
-<ng-container [ngTemplateOutlet]="buttonTmpl"
-  [ngTemplateOutletContext]="{ label: 'Remove', className: 'btn-danger', icon: 'fa-remove' }">
-</ng-container>
-
-<hr />
-
-<ng-template #buttonTmpl1 let-label let-className="className" let-icon="icon">
-  <button [ngClass]="['btn', className ? className : '']">
-    <i *ngIf="icon" class="fa {{icon}}"></i>
-    {{ label }}
-  </button>
-</ng-template>
-
-<ng-container [ngTemplateOutlet]="buttonTmpl1"
-  [ngTemplateOutletContext]="{ $implicit: 'Remove', className: 'btn-danger', icon: 'fa-remove' }">
-</ng-container>
+  <ng-container [ngTemplateOutlet]="buttonTmpl1"
+    [ngTemplateOutletContext]="{ $implicit: 'Remove', className: 'btn-danger', icon: 'fa-remove' }">
+  </ng-container>
+</app-control-label>

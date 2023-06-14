@@ -1,2 +1,4 @@
-<app-author-detail *ngFor="let author of authors" [author]="author" (deleteAuthor)="handleDelete($event)">
-</app-author-detail>
+<app-control-label label="Child call to parent's event">
+  <app-author-detail *ngFor="let author of authors" [author]="author" (deleteAuthor)="handleDelete($event)">
+  </app-author-detail>
+</app-control-label>
